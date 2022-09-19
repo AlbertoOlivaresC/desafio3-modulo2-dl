@@ -1,0 +1,126 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css);
+
+body{
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+
+.container{
+    height: 100vh;
+    display: grid;
+    grid-template-areas: 
+    "header header header"
+    "filter filter filter"
+    "products products products"
+    "pages pages pages"
+    "footer footer footer" 
+    ;
+}
+
+div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header{
+    grid-area: header;
+    justify-content: space-around;
+}
+.logo{
+    max-width: 40px;
+}
+.filter{
+    grid-area: filter;
+}
+.ico{
+    max-width: 22px;
+    margin: 1%;
+}
+.products{
+    grid-area: products;
+}
+img{
+    width: 100%;
+    height: 100%;
+}
+.product{
+    display: flex;
+    flex-direction: column;
+}
+.styled{
+    border-radius: 15px;
+    padding: 5px 10px;
+    background-color: rgb(29, 29, 121);
+    border: none;
+    color: white;
+    margin-bottom: 5px;
+}
+.nav, .desaparece{
+    display: none;
+}
+.pages{
+    grid-area: pages;
+}
+.pages p{
+    border: solid 1px black;
+    padding: 2%;
+}
+.footer{
+    grid-area: footer;
+}
+
+@media (min-width: 576px){
+    .container{
+        height: 100vh;
+        display: grid;
+        grid-template-rows: 10vh 1fr 1fr 1fr 10vh;        
+        grid-template-areas: 
+        "header filter filter filter filter"
+        "nav products products products products"
+        "nav products products products products"
+        "nav products products products products"
+        "footer pages pages pages pages" 
+        ;
+    }
+    .header .burger{
+        display: none;
+    }
+    .nav, .desaparece{
+        display: block;
+    }
+    .filter{
+        flex-direction: column;
+    }
+    .options{
+        width: 95%;
+        padding-inline: 10px;
+        display: flex;
+        justify-content: space-between;
+        background-color: rgb(207, 205, 203);
+    }
+    .nav{
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .products{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    .product{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .pages p{
+        border: solid 1px black;
+        padding: 10px;
+    }
+    .options{
+        justify-content: space-between;
+    }
+}
